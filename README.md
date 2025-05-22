@@ -1,4 +1,3 @@
-## Remove Ziyu Project folder from cache
 ## Environment Setup
 This project is tested in Python 3.9.9.
 
