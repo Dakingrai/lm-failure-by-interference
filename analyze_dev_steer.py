@@ -373,7 +373,7 @@ def accuracy_analysis_mlp(models):
         cache_dir = m["cache"]
         # model = load_model(model_name, cache_dir)
         folder_name = m["name"].split("/")[-1]
-        result_dir = f"results/proj_experiment/improve_performance/final_mlp/{folder_name}/mlp/f1-score/last_paren/new"
+        result_dir = f"results/steer_results/{folder_name}/mlp/f1-score/dev"
         mlp_results_path = f"results/proj_experiment/mlp_results/{folder_name}/proj"
 
         results = mlp_accuracy_analysis(result_dir, mlp_results_path, "f1-score")
@@ -391,7 +391,7 @@ def accuracy_analysis_mlp(models):
         cache_dir = m["cache"]
         # model = load_model(model_name, cache_dir)
         folder_name = m["name"].split("/")[-1]
-        result_dir = f"results/proj_experiment/improve_performance/final_mlp/{folder_name}/mlp/precision/last_paren/new"
+        result_dir = f"results/steer_results/{folder_name}/mlp/precision/dev"
 
         results = mlp_accuracy_analysis(result_dir, mlp_results_path, "precision")
         model_results_precision[folder_name] = results
@@ -408,7 +408,7 @@ def accuracy_analysis_mlp(models):
         cache_dir = m["cache"]
         # model = load_model(model_name, cache_dir)
         folder_name = m["name"].split("/")[-1]
-        result_dir = f"results/proj_experiment/improve_performance/final_mlp/{folder_name}/mlp/recall/last_paren/new"
+        result_dir = f"results/steer_results/{folder_name}/mlp/recall/dev"
         
 
         results = mlp_accuracy_analysis(result_dir, mlp_results_path, "recall")
@@ -445,7 +445,7 @@ def accuracy_analysis_both(models):
     # f1-score
     for m in models:
         folder_name = m["name"].split("/")[-1]
-        result_dir = f"results/proj_experiment/improve_performance/final_v/{folder_name}/both/f1-score/last_paren/new"
+        result_dir = f"results/steer_results/{folder_name}/both/f1-score/dev"
 
         results = both_accuracy_analysis(result_dir)
         model_results_f1_score[folder_name] = results

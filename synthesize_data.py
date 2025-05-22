@@ -133,8 +133,6 @@ def main():
         folder_name = model["name"].split("/")[-1]
         data_dir = f"data/{folder_name}"
         create_results_dir(data_dir)
-        # model = load_model(model_name, cache_dir)
-        # tokenizer = model.tokenizer
         tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
 
         all_prompts = base_prompts(n_paren, data_dir, save_file=False)

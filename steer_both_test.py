@@ -284,7 +284,7 @@ def both_intervention(model, attn_results_path, mlp_results_path, data_dir, resu
 
 def main():
     models = read_json("utils/models.json")
-    n_paren = [0, 1, 2, 3, 4, 5, 6]
+    n_paren = 4
     for model in models:
         model_name = model["name"]
         print(f"Model name: {model_name}")
