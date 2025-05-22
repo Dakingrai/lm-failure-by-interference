@@ -162,7 +162,7 @@ def load_data(data_path: str):
 
     return data
 
-def load_model(model_name: str, cache_dir: str = "/projects/ziyuyao/models/llama3-8b-cache/"):
+def load_model(model_name: str, cache_dir: str = "../models/llama3-8b-cache/"):
     """
     Function to load the model
 
