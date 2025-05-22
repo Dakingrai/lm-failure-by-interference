@@ -12,3 +12,8 @@ We provide the data used in the experiment in the data folder. Alternatively, yo
 ```
 synthesize_data.py
 ```
+## Accuracy
+You can compute the accuracy of all models on the synthesized train, dev, and test datasets by running the following Python script:
+```
+get_accuracy.py
+```
