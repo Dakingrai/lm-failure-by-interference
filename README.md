@@ -8,7 +8,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 ## Dataset synthesis
-We provide the data used in the experiment in the data folder. Alternatively, you can generate your own dataset by running the following Python script.
+We provide the data used in the experiment in the data folder (Note: Initially the data is synthesized without random seeds, there may be slight variations in the experimental results. However, these variations do not affect any of our claims in the paper and instead demonstrate the robustness and consistency of our findings.). Alternatively, you can generate your own dataset by running the following Python script.
 ```
 python synthesize_data.py
 ```
