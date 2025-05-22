@@ -1,3 +1,4 @@
+## Remove Ziyu Project folder from cache
 ## Environment Setup
 This project is tested in Python 3.9.9.
 
@@ -17,3 +18,11 @@ You can compute the accuracy of all models on the synthesized train, dev, and te
 ```
 get_accuracy.py
 ```
+## LM Components Projection on Train Set
+To obtain the generalizability of attention heads and MLP neurons, you have to first run the following script.
+```
+proj_attn.py
+proj_neuron.py
+```
+Running these scripts saves all the necessary metadata for subsequent experiments, including the LM steering(RASteer) experiment.
+
