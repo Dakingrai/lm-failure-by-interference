@@ -129,6 +129,56 @@ def calculate_precision_recall_f1(thresholds, precision_data, subtask_n_paren):
         label_n = entry["label"].count(")")
         label_logit = entry["paren_logits"].get(f"{label_n}-paren-logit", 0)
         for i, threshold in enumerate(thresholds):
+            activated = is_promoted(max_logit, label_logit, threshold)
+            # activated = is_promoted_rank(list(entry["paren_ranks"].values()), threshold_rank=100)
+            if activated:
+                if label_n == subtask_n_paren:
+                    true_positives[i] += 1
+                else:
+                    false_positives[i] += 1
+            elif label_n == subtask_n_paren:
+                false_negatives[i] += 1
+            else:
+                true_negatives[i] += 1
+    precision = []
+    recall = []
+    f1_scores = []
+    false_positive_rates = []
+    for i in range(len(thresholds)):
+        tp, fp, fn, tn = true_positives[i], false_positives[i], false_negatives[i], true_negatives[i]
+        prec = tp / (tp + fp) if (tp + fp) > 0 else 0
+        rec = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1 = 2 * (prec * rec) / (prec + rec) if (prec + rec) > 0 else 0
+        fpr = fp / (fp + tn) if (fp + tn) > 0 else 0
+        precision.append(prec)
+        recall.append(rec)  
+        f1_scores.append(f1)
+        false_positive_rates.append(fpr)
+
+    return precision, recall, f1_scores, false_positive_rates
+
+
+def calculate_precision_recall_f1_with_rank(thresholds, precision_data, subtask_n_paren):
+    """
+    Calculates precision, recall, F1 score, and false positive rate for a given head.
+    Parameters:
+        thresholds (List[float])
+        precision_data (List[Dict]): Contains 'label' and 'paren_logits'
+        subtask_n_paren (int): Number of ')' in subtask label
+    Returns:
+        Tuple of lists: precision, recall, f1_scores, false_positive_rates
+    """
+    # Initialize metrics
+    true_positives = [0] * len(thresholds)
+    false_positives = [0] * len(thresholds)
+    false_negatives = [0] * len(thresholds)
+    true_negatives = [0] * len(thresholds)
+    # --- Precision & F1 Calculation (using precision_data) ---
+    for entry in precision_data:
+        max_logit = entry["paren_logits"]["max-logit"]
+        label_n = entry["label"].count(")")
+        label_logit = entry["paren_logits"].get(f"{label_n}-paren-logit", 0)
+        for i, threshold in enumerate(thresholds):
             # activated = is_promoted(max_logit, label_logit, threshold)
             activated = is_promoted_rank(list(entry["paren_ranks"].values()), threshold_rank=100)
             if activated:
@@ -157,7 +207,54 @@ def calculate_precision_recall_f1(thresholds, precision_data, subtask_n_paren):
 
     return precision, recall, f1_scores, false_positive_rates
 
+def calculate_precision_recall_f1_with_rank(thresholds, precision_data, subtask_n_paren):
+    """
+    Calculates precision, recall, F1 score, and false positive rate for a given head.
+    Parameters:
+        thresholds (List[float])
+        precision_data (List[Dict]): Contains 'label' and 'paren_logits'
+        subtask_n_paren (int): Number of ')' in subtask label
+    Returns:
+        Tuple of lists: precision, recall, f1_scores, false_positive_rates
+    """
+    # Initialize metrics
+    true_positives = [0] * len(thresholds)
+    false_positives = [0] * len(thresholds)
+    false_negatives = [0] * len(thresholds)
+    true_negatives = [0] * len(thresholds)
+    # --- Precision & F1 Calculation (using precision_data) ---
+    for entry in precision_data:
+        max_logit = entry["paren_logits"]["max-logit"]
+        label_n = entry["label"].count(")")
+        label_logit = entry["paren_logits"].get(f"{label_n}-paren-logit", 0)
+        for i, threshold in enumerate(thresholds):
+            # activated = is_promoted(max_logit, label_logit, threshold)
+            activated = is_promoted_rank(list(entry["paren_ranks"].values()), threshold_rank=100)
+            if activated:
+                if label_n == subtask_n_paren:
+                    true_positives[i] += 1
+                else:
+                    false_positives[i] += 1
+            elif label_n == subtask_n_paren:
+                false_negatives[i] += 1
+            else:
+                true_negatives[i] += 1
+    precision = []
+    recall = []
+    f1_scores = []
+    false_positive_rates = []
+    for i in range(len(thresholds)):
+        tp, fp, fn, tn = true_positives[i], false_positives[i], false_negatives[i], true_negatives[i]
+        prec = tp / (tp + fp) if (tp + fp) > 0 else 0
+        rec = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1 = 2 * (prec * rec) / (prec + rec) if (prec + rec) > 0 else 0
+        fpr = fp / (fp + tn) if (fp + tn) > 0 else 0
+        precision.append(prec)
+        recall.append(rec)  
+        f1_scores.append(f1)
+        false_positive_rates.append(fpr)
 
+    return precision, recall, f1_scores, false_positive_rates
 
 
 def calculate_accuracy_and_confidence_with_rank(thresholds, data, subtask_paren, paren_token_ids, use_second_highest=False):
@@ -299,7 +396,7 @@ def process_attention_data_with_rank(proj_results_path, result_path, thresholds,
         data, precision_data = get_data(data_path, subtask_paren)
 
         # Initialize metrics
-        precision, recall, f1_scores, false_positive_rates = calculate_precision_recall_f1(thresholds, precision_data, subtask_n_paren)
+        precision, recall, f1_scores, false_positive_rates = calculate_precision_recall_f1_with_rank(thresholds, precision_data, subtask_n_paren)
 
 
         accuracy, avg_correct_conf, avg_incorrect_conf = calculate_accuracy_and_confidence_with_rank(thresholds, data, subtask_paren, paren_token_ids, use_second_highest=True)

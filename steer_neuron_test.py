@@ -132,7 +132,7 @@ def parse_attn_name(name):
     return (layer, head)
 
 
-def attention_intervention(model, attn_results_path, data_dir, results_dir, n_paren=4, metric="f1-score"):
+def attention_intervention(model, attn_results_path, data_dir, results_dir, n_paren=4, metric="f1-score", folder_name=None):
     results_dir = f"{results_dir}/{metric}"
     create_results_dir(results_dir)
     ALL_HEADS = get_heads(attn_results_path, metric=metric)
@@ -140,73 +140,64 @@ def attention_intervention(model, attn_results_path, data_dir, results_dir, n_pa
     print(f"Number of heads: {len(ALL_HEADS)}")
     n_heads = [0, 5, 10, 20, 30, 40, 50, 60]
 
-    for n_head in tqdm(n_heads):
-        HEADS = ALL_HEADS[:n_head]
-        if n_head == 0:
-            coeffs = [1]
-        else:
-            coeffs = [1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0]
-        for c in tqdm(coeffs):
-            for n in range(n_paren):
-                results = {}
-                last_data_path = f"{data_dir}/dev_labeled_last_paren_{n}.json"
-                last_results_path = f"{results_dir}/dev"
-                create_results_dir(last_results_path)
-                data = read_json(last_data_path)
-                total = 0
-                correct = 0
-                detail_results = []
-                for each in data:
-                    total += 1
-                    tmp = {}
-                    with InterveneOV(model, intervene_heads=HEADS, coeff = c):
-                        logits = model(each["prompt"], return_type="logits")
-                    l = logits.argmax(dim=-1).squeeze()[-1]
-                    pred = model.to_string(l)
-                    # save data
-                    tmp['prompt'] = each["prompt"]
-                    tmp['label'] = each["label"]
-                    tmp['pred'] = pred
-                    if pred == each["label"]:
-                        tmp['correct'] = True
-                        correct += 1
-                    else:
-                        tmp['correct'] = False
-                    detail_results.append(tmp)
-                    gc.collect()
-                    torch.cuda.empty_cache()
-                results[f"accuracy"] = correct / total
-                results["detail_results"] = detail_results
-                save_file(results, f"{last_results_path}/subtask-{n}-coeff-{c}-heads-{n_head}.json")
-
-                print(f"results saved to {last_results_path}/subtask-{n}_coeff-{c}_heads-{n_head}.json")
-                # remove the cache and garbage collection
-    del model, data, results
-    clear_cache()
-
+    coeffs_path = f"results/meta_results/coeffs_attn.json"
+    coeffs_data = read_json(coeffs_path)
+    count_paren = 0
+    for task_name, task_value in coeffs_data[folder_name].items(): # looping over models
+        test_data = read_json(f"{data_dir}/test_labeled_last_paren_{count_paren}.json") 
+        for n_head, coeff in task_value.items(): # looping over the number of heads and corresponding coefficients
+            n_head = int(n_head)
+            HEADS = ALL_HEADS[:n_head]
+            total = 0
+            correct = 0
+            detail_results = []
+            results = {}
+            last_results_path = f"{results_dir}"
+            create_results_dir(last_results_path)
+            for each in test_data:
+                total += 1
+                tmp = {}
+                with InterveneOV(model, intervene_heads=HEADS, coeff = coeff):
+                    logits = model(each["prompt"], return_type="logits")
+                l = logits.argmax(dim=-1).squeeze()[-1]
+                pred = model.to_string(l)
+                # save data
+                tmp['prompt'] = each["prompt"]
+                tmp['label'] = each["label"]
+                tmp['pred'] = pred
+                if pred == each["label"]:
+                    tmp['correct'] = True
+                    correct += 1
+                else:
+                    tmp['correct'] = False
+                detail_results.append(tmp)
+                gc.collect()
+                torch.cuda.empty_cache()
+            results[f"accuracy"] = correct / total
+            results["detail_results"] = detail_results
+            save_file(results, f"{last_results_path}/subtask-{count_paren}-coeff-{coeff}-heads-{n_head}.json")
+            print(f"results saved to {last_results_path}/subtask-{count_paren}_coeff-{coeff}_heads-{n_head}.json")
+            # remove the cache and garbage collection
+        count_paren += 1
 
 def main():
-    models = read_json("utils/models.json")[:2]
-    # models = models[-3:-2] # only run the last model
-    n_paren = 4
+    models = read_json("utils/models.json")
+    n_paren = [0, 1, 2, 3, 4, 5, 6]
     for model in models:
         model_name = model["name"]
         print(f"Model name: {model_name}")
         cache_dir = model["cache"]
         folder_name = model["name"].split("/")[-1]
-        data_dir = f"data/{folder_name}"
-        attn_results_path = f"results/attn_results/{folder_name}"
-
-        results_dir = f"results/steer_results/{folder_name}/attn/dev"
-        create_results_dir(results_dir)
-
         model = load_model(model_name, cache_dir)
+
+        data_dir = f"data/{folder_name}"
+        attn_results_path = f"results/projections/mlp_results/{folder_name}"
+
+        results_dir = f"results/steer_results/{folder_name}/mlp/test"
+        create_results_dir(results_dir)
         
-        attention_intervention(model, attn_results_path, data_dir, results_dir, n_paren=n_paren, metric="f1-score")
 
-        attention_intervention(model, attn_results_path, data_dir, results_dir, n_paren=n_paren, metric="precision")
-
-        attention_intervention(model, attn_results_path, data_dir, results_dir, n_paren=n_paren, metric="recall")
+        attention_intervention(model, attn_results_path, data_dir, results_dir, n_paren=n_paren, metric="f1-score", folder_name=folder_name)
 
         del model
         clear_cache()
