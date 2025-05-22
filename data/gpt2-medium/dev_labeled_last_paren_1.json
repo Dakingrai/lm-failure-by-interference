@@ -1,0 +1,752 @@
+[
+    {
+        "prompt": "#print the string 880\nprint(str(880",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 835\nprint(str(835",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 328\nprint(str(328",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 164\nprint(str(164",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 884\nprint(str(884",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 923\nprint(str(923",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 970\nprint(str(970",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 748\nprint(str(748",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 241\nprint(str(241",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 580\nprint(str(580",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 666\nprint(str(666",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 162\nprint(str(162",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 395\nprint(str(395",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 696\nprint(str(696",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 260\nprint(str(260",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 105\nprint(str(105",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 688\nprint(str(688",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 514\nprint(str(514",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 480\nprint(str(480",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 282\nprint(str(282",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 663\nprint(str(663",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 718\nprint(str(718",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 655\nprint(str(655",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 625\nprint(str(625",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 838\nprint(str(838",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 381\nprint(str(381",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 194\nprint(str(194",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 134\nprint(str(134",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 378\nprint(str(378",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 969\nprint(str(969",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 765\nprint(str(765",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 345\nprint(str(345",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 952\nprint(str(952",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 469\nprint(str(469",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 321\nprint(str(321",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 454\nprint(str(454",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 416\nprint(str(416",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 526\nprint(str(526",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 366\nprint(str(366",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 191\nprint(str(191",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 343\nprint(str(343",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 669\nprint(str(669",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 726\nprint(str(726",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 127\nprint(str(127",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 772\nprint(str(772",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 668\nprint(str(668",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 958\nprint(str(958",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 319\nprint(str(319",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 310\nprint(str(310",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 179\nprint(str(179",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 128\nprint(str(128",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 473\nprint(str(473",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 267\nprint(str(267",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 255\nprint(str(255",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 278\nprint(str(278",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 647\nprint(str(647",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 121\nprint(str(121",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 779\nprint(str(779",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 313\nprint(str(313",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 683\nprint(str(683",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 770\nprint(str(770",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 125\nprint(str(125",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 259\nprint(str(259",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 116\nprint(str(116",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 476\nprint(str(476",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 811\nprint(str(811",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 507\nprint(str(507",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 296\nprint(str(296",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 983\nprint(str(983",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 596\nprint(str(596",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 198\nprint(str(198",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 318\nprint(str(318",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 849\nprint(str(849",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 118\nprint(str(118",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 458\nprint(str(458",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 994\nprint(str(994",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 808\nprint(str(808",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 703\nprint(str(703",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 315\nprint(str(315",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 437\nprint(str(437",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 357\nprint(str(357",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 193\nprint(str(193",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 905\nprint(str(905",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 693\nprint(str(693",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 713\nprint(str(713",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 920\nprint(str(920",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 822\nprint(str(822",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 329\nprint(str(329",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 743\nprint(str(743",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 675\nprint(str(675",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 764\nprint(str(764",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 627\nprint(str(627",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 858\nprint(str(858",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 489\nprint(str(489",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 832\nprint(str(832",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 724\nprint(str(724",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 960\nprint(str(960",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 887\nprint(str(887",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 422\nprint(str(422",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 814\nprint(str(814",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 108\nprint(str(108",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 714\nprint(str(714",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 736\nprint(str(736",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 425\nprint(str(425",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 224\nprint(str(224",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 485\nprint(str(485",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 617\nprint(str(617",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 979\nprint(str(979",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 966\nprint(str(966",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 348\nprint(str(348",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 588\nprint(str(588",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 337\nprint(str(337",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 773\nprint(str(773",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 988\nprint(str(988",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 120\nprint(str(120",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 823\nprint(str(823",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 793\nprint(str(793",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 466\nprint(str(466",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 543\nprint(str(543",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 483\nprint(str(483",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 783\nprint(str(783",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 435\nprint(str(435",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 190\nprint(str(190",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 377\nprint(str(377",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 222\nprint(str(222",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 837\nprint(str(837",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 622\nprint(str(622",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 950\nprint(str(950",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 612\nprint(str(612",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 681\nprint(str(681",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 202\nprint(str(202",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 699\nprint(str(699",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 594\nprint(str(594",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 892\nprint(str(892",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 350\nprint(str(350",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 757\nprint(str(757",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 968\nprint(str(968",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 978\nprint(str(978",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 392\nprint(str(392",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 942\nprint(str(942",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 558\nprint(str(558",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 798\nprint(str(798",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 577\nprint(str(577",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 354\nprint(str(354",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 738\nprint(str(738",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 276\nprint(str(276",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 839\nprint(str(839",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 320\nprint(str(320",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 933\nprint(str(933",
+        "label": "))",
+        "label_idx": 4008
+    },
+    {
+        "prompt": "#print the string 819\nprint(str(819",
+        "label": "))",
+        "label_idx": 4008
+    }
+]
