@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lmfi"
+version = "0.0.0"
+description = "Failure by Interference (RASTEER): mechanistic interpretability + steering on the balanced-parentheses task."
+readme = "README.md"
+requires-python = ">=3.9"
+# Runtime dependencies are pinned in requirements.txt (left unchanged during the
+# migration) and are intentionally not duplicated here.
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# src-layout: install with `pip install -e .` so experiments can do
+# `from lmfi... import ...` without path hacks.
