@@ -1,6 +1,3 @@
-class StopForward(Exception):
-    pass
-
 class InterveneMLPNeuron:
     def __init__(self, 
                  model, 
