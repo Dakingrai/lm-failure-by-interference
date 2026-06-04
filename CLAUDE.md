@@ -10,12 +10,18 @@ package + thin, config-driven experiment entry points.
 ## Status (where the migration is)
 
 - Branch: `refactor/lmfi-migration` (off `main`; `main` is untouched).
-- Done — cleanup, deletions only (commit eb12222): removed `utils/plotly_utils.py`
-  and `steer_neuron_test.py`; trimmed `activation_patching.py` to the 4 imported
-  classes (`InterveneOV`, `InterveneNeurons`, `InterveneOV_Neuron`, `InterveneMLPNeuron`).
-- Now — package scaffold + this file (additions only).
-- Next — capture the regression anchor (GPU), then migrate experiments one per commit
-  in the order below.
+- **Migration COMPLETE.** All experiments (00, 02–06) migrated into `src/lmfi/` +
+  `experiments/` + `configs/`, one commit each, each validated original ≡ migrated
+  on gpt2 (byte-identical where deterministic; seedless-data variation noted where it
+  applies). The flat root scripts and `utils/` are gone; only `data/` (canonical),
+  `src/`, `experiments/`, `configs/`, `results/` (gitignored) remain.
+- Commits: cleanup eb12222 / StopForward 86e4155 / scaffold 75d6ab8 / accuracy 5aa22c5 /
+  projection 1ebf8fd / generalizability b1735e6 / component-figures aceec3f /
+  steering 3a707cb / synthesis (this commit).
+- Remaining (optional, not blocking): regenerate the full multi-model projection/
+  steering outputs (GPU) for pythia/CodeLlama/Llama-2 to validate their Table 1 / Fig 4
+  anchors; build the Fig 6 generator ("deferred-and-easy"). Fig 4(c)/(f) & Fig 5 stay
+  out of scope (circuit baseline not in this repo).
 
 ## Prime directive
 
