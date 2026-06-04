@@ -47,9 +47,6 @@ pip install -e .            # installs the `lmfi` package (src layout)
 Notes:
 - `requirements.txt` pins `transformer-lens` to a specific git commit, so the install
   needs network access.
-- It also lists `human_eval` (an editable git package used only for the out-of-scope
-  HumanEval evaluation). If it fails to build, it is safe to skip — drop that line and
-  reinstall; nothing in this repo imports it.
 - If you don’t `pip install -e .`, run the experiments with `PYTHONPATH=src` instead.
 
 ### Models
@@ -105,18 +102,6 @@ The steering driver is unified: `--component {attn,neuron,both}` × `--mode
 `analyze` picks the best dev coefficient per configuration (→ `coeffs_<component>.json`);
 `apply` applies that coefficient on the test set.
 
-### SLURM
-
-Each GPU stage has a matching `*.slurm` script (`experiments/01_accuracy/accuracy.slurm`,
-`02_projection/projection.slurm`, `05_steering/steering.slurm`). They activate the env,
-set `PYTHONPATH`/offline caches, and request an A100; override the GPU for small models,
-e.g. `--gres=gpu:1g.10gb:1` for a gpt2 canary. Example:
-
-```
-mkdir -p results/slurm-logs
-sbatch --export=ALL,MODELS="gpt2",COMPONENT="both" experiments/02_projection/projection.slurm
-```
-
 ## Figure → script map
 
 | Artifact | Produced by |
@@ -127,10 +112,6 @@ sbatch --export=ALL,MODELS="gpt2",COMPONENT="both" experiments/02_projection/pro
 | Fig 2 (dual-sign neuron, CodeLlama L19N11) | `experiments/04_component_figures/plot_dual_neuron.py` |
 | Fig 3 + Fig 8 (precision-recall) | `experiments/04_component_figures/precision_recall.py` (`--preset fig3` / `fig8`) |
 | Fig 4(a,b,d,e), App D (RASTEER) | `experiments/05_steering/run.py` |
-
-Out of scope (no code in this repo): the circuit-discovery baseline (§4.2 / App C),
-the arithmetic task (§5.4.3), and HumanEval — so Fig 4(c)/(f) and Fig 5 (which depend
-on the circuit baseline) are not reproducible here.
 
 ## Notes on reproducibility
 
