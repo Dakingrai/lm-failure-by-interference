@@ -7,6 +7,7 @@ A balanced-parentheses sub-task is identified two ways in this codebase:
 with ``N = n + 1``. No other module should do inline ``n - 1`` / ``f"_{n}"``
 arithmetic; build paths and labels through here.
 """
+import json
 import os
 
 N_SUBTASKS = 4
@@ -48,3 +49,19 @@ def labeled_path(data_root: str, model_name: str, split: str, subtask: SubTask,
     ``data/gpt2/test_labeled_last_paren_2.json``."""
     folder = model_folder(model_name)
     return os.path.join(data_root, folder, f"{split}_labeled_{label_pos}_{subtask.index}.json")
+
+
+def paren_token_ids(data_root: str, model_name: str, n_subtasks: int = N_SUBTASKS,
+                    label_pos: str = "last_paren"):
+    """Token ids of the 1..N closing-paren targets, read from the first example
+    of each sub-task's train file (all examples in a sub-task share the label).
+
+    Migrated from get_paren_logit_idx() in proj_attn.py / proj_neuron.py.
+    """
+    ids = []
+    for st in all_subtasks(n_subtasks):
+        path = labeled_path(data_root, model_name, "train", st, label_pos)
+        with open(path, "r") as f:
+            data = json.load(f)
+        ids.append(data[0]["label_idx"])
+    return ids
