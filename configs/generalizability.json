@@ -1,0 +1,19 @@
+{
+    "comment": "Config for the generalizability experiment (Section 3.2 -> Table 1, Fig 1). Migrated from analyze_attn_proj.py + analyze_neuron.py. Default model set = all 7 (the [:2] in the originals was a debug leftover; Table 1 reports all 7).",
+    "models": [
+        "gpt2",
+        "gpt2-medium",
+        "gpt2-large",
+        "gpt2-xl",
+        "codellama/CodeLlama-7b-hf",
+        "meta-llama/Llama-2-7b",
+        "EleutherAI/pythia-6.9b"
+    ],
+    "thresholds": [0.5, 0.6, 0.7, 0.8, 0.9],
+    "generalization_threshold": 0.9,
+    "data_root": "data",
+    "proj_root": "results/projections",
+    "attn_results_root": "results/attn_results",
+    "mlp_results_root": "results/mlp_results",
+    "meta_root": "results/meta_results"
+}
