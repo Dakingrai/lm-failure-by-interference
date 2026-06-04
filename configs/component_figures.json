@@ -1,0 +1,21 @@
+{
+    "comment": "Config for the component figures (Fig 2 dual neuron, Fig 3 + Fig 8 precision-recall). Migrated from plot_dual_neuron.py + precision_recall_plot.py.",
+    "precision_recall": {
+        "comment": "Two presets (CLAUDE.md rule 9): Fig 3 = {gpt2, CodeLlama-7b-hf}; Fig 8 (App B.2) = the other four. The original [:2] (gpt2+gpt2-medium) reproduced neither.",
+        "presets": {
+            "fig3": ["gpt2", "codellama/CodeLlama-7b-hf"],
+            "fig8": ["gpt2-medium", "gpt2-large", "gpt2-xl", "meta-llama/Llama-2-7b"]
+        },
+        "default_preset": "fig3",
+        "attn_results_root": "results/attn_results",
+        "mlp_results_root": "results/mlp_results",
+        "out_root": "results/plot_results"
+    },
+    "dual_neuron": {
+        "comment": "Fig 2: CodeLlama FF neuron L19N11. Other neurons from the original's commented alternates can be added here.",
+        "model": "codellama/CodeLlama-7b-hf",
+        "neurons": [[19, 11]],
+        "proj_root": "results/projections",
+        "out_root": "results/plot_results"
+    }
+}
