@@ -1,0 +1,18 @@
+{
+    "comment": "Config for the accuracy experiment (paper Table 3 / Appendix A). Default model set = all 7 (paper-reproducing, CLAUDE.md hard-rule 2). Override on the CLI, e.g. --models gpt2, for a canary run.",
+    "models": [
+        "gpt2",
+        "gpt2-medium",
+        "gpt2-large",
+        "gpt2-xl",
+        "codellama/CodeLlama-7b-hf",
+        "meta-llama/Llama-2-7b",
+        "EleutherAI/pythia-6.9b"
+    ],
+    "splits": ["train", "dev", "test"],
+    "n_subtasks": 4,
+    "label_pos": "last_paren",
+    "data_root": "data",
+    "results_root": "results/accuracy",
+    "num_samples": 0
+}

@@ -1,0 +1,16 @@
+{
+    "comment": "Config for dataset synthesis. The committed data/ is canonical; this regenerates it reproducibly. seed=20 matches the original's module-level seed.",
+    "models": [
+        "gpt2",
+        "gpt2-medium",
+        "gpt2-large",
+        "gpt2-xl",
+        "codellama/CodeLlama-7b-hf",
+        "meta-llama/Llama-2-7b",
+        "EleutherAI/pythia-6.9b"
+    ],
+    "n_paren": 4,
+    "n_samples": 750,
+    "seed": 20,
+    "data_root": "data"
+}

@@ -1,0 +1,12 @@
+{
+    "comment": "Model registry. `cache` is environment-specific and NOT committed: null means use the default HF hub cache (where weights actually live on a given machine). The leaked personal paths from utils/models.json (e.g. ../ziyuyao/...) are intentionally stripped.",
+    "models": [
+        {"name": "gpt2",                          "cache": null},
+        {"name": "gpt2-medium",                   "cache": null},
+        {"name": "gpt2-large",                    "cache": null},
+        {"name": "gpt2-xl",                        "cache": null},
+        {"name": "codellama/CodeLlama-7b-hf",     "cache": null},
+        {"name": "meta-llama/Llama-2-7b",         "cache": null},
+        {"name": "EleutherAI/pythia-6.9b",        "cache": null}
+    ]
+}

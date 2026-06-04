@@ -1,0 +1,31 @@
+{
+    "comment": "Config for the unified steering experiment (RASteer -> Fig 4, App D). Collapses steer_{attn,neuron,both}(+_test) + analyze_dev_steer.",
+    "n_grid": [0, 5, 10, 20, 30, 40, 50, 60],
+    "coeffs": [1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0],
+    "subtasks": [0, 1, 2, 3],
+    "data_root": "data",
+    "steer_root": "results/steer_results",
+    "attn_results_root": "results/attn_results",
+    "mlp_results_root": "results/mlp_results",
+    "meta_root": "results/meta_results",
+    "components": {
+        "attn": {
+            "comment": "All 7 models, 3 metrics, all sub-tasks (the [:2] in steer_attn was a debug leftover).",
+            "models": ["gpt2", "gpt2-medium", "gpt2-large", "gpt2-xl", "codellama/CodeLlama-7b-hf", "meta-llama/Llama-2-7b", "EleutherAI/pythia-6.9b"],
+            "metrics": ["f1-score", "precision", "recall"],
+            "subtasks": [0, 1, 2, 3]
+        },
+        "neuron": {
+            "comment": "Intentional defaults preserved from steer_neuron: the three larger models and the two harder sub-tasks (3-/4-paren) -> Fig 4(b)/(e).",
+            "models": ["codellama/CodeLlama-7b-hf", "meta-llama/Llama-2-7b", "EleutherAI/pythia-6.9b"],
+            "metrics": ["f1-score", "precision", "recall"],
+            "subtasks": [2, 3]
+        },
+        "both": {
+            "comment": "All 7 models, f1-score, all sub-tasks (Appendix D.1).",
+            "models": ["gpt2", "gpt2-medium", "gpt2-large", "gpt2-xl", "codellama/CodeLlama-7b-hf", "meta-llama/Llama-2-7b", "EleutherAI/pythia-6.9b"],
+            "metrics": ["f1-score"],
+            "subtasks": [0, 1, 2, 3]
+        }
+    }
+}

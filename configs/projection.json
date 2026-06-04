@@ -1,0 +1,25 @@
+{
+    "comment": "Config for the projection experiment (the hub: per-component logit projections feeding generalizability and steering). Migrated from proj_attn.py / proj_neuron.py.",
+    "models": [
+        "gpt2",
+        "gpt2-medium",
+        "gpt2-large",
+        "gpt2-xl",
+        "codellama/CodeLlama-7b-hf",
+        "meta-llama/Llama-2-7b",
+        "EleutherAI/pythia-6.9b"
+    ],
+    "n_subtasks": 4,
+    "data_root": "data",
+    "results_root": "results/projections",
+    "attn": {
+        "comment": "All heads, all train examples (no per-subtask cap) — matches proj_attn.py.",
+        "train_limit_per_subtask": 0
+    },
+    "neuron": {
+        "comment": "proj_neuron.py uses only the first 50 train examples/sub-task ('to reduce the time') and a top/bottom-50 static filter. Both preserved as documented defaults (CLAUDE.md hard-rule 2).",
+        "train_limit_per_subtask": 50,
+        "filter_top_k": 50,
+        "settle_seconds": 0.0
+    }
+}
